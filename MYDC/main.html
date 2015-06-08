@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="carrera">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="checkbox" ng-model="Proc" />
+    <input type="checkbox" ng-model="Param" />
+    <car>
+        <car-proc name="apiCountries" alias="Test" run="once"></car-proc>
+        <car-proc name="apiCurrencies" run="once" model="Currencies" type="object" ng-if="Proc">
+            <car-param name="CountryId" ng-if="Param"></car-param>
+        </car-proc>
+    </car>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/carrera.min.js"></script>
+</body>
+</html>
+<pre>Currencies: {{Currencies}}</pre>
